@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Portfolio App</string>
+    <string name="menu_top">Top</string>
+    <string name="menu_bottom">Bottom</string>
+</resources>
