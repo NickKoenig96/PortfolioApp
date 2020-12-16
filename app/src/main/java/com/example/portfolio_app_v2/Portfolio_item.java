@@ -36,8 +36,8 @@ public class Portfolio_item extends AppCompatActivity {
 
         getSupportActionBar().setTitle(v.getTitle());
 
-        title = findViewById(R.id.videoTitle);
-        desc = findViewById(R.id.videoDesc);
+        title = findViewById(R.id.detailTitle);
+        desc = findViewById(R.id.detailDesc);
         image = findViewById(R.id.imageView);
 
          title.setText(v.getTitle());

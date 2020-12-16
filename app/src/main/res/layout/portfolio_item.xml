@@ -34,7 +34,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/videoTitle"
+                android:id="@+id/detailTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -54,8 +54,8 @@
                 android:layout_height="30dp"
                 android:layout_width="wrap_content"
                 android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="@+id/videoTitle"
-                app:layout_constraintBaseline_toBaselineOf="@+id/videoTitle"
+                app:layout_constraintEnd_toEndOf="@+id/detailTitle"
+                app:layout_constraintBaseline_toBaselineOf="@+id/detailTitle"
                 android:text="share"
                 android:background="#2E86C1"
                 android:textColor="#FFFFFF"
@@ -78,7 +78,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/videoDesc"
+                android:id="@+id/detailDesc"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
