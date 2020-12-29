@@ -16,7 +16,6 @@ import android.widget.TextView;
 
 public class Portfolio_item extends AppCompatActivity {
 
-    public static final String TAG = "TAG";
     FrameLayout frameLayout;
     ImageView image;
     TextView title;
@@ -26,7 +25,6 @@ public class Portfolio_item extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.portfolio_item);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         frameLayout = findViewById(R.id.frameLayout);
 
@@ -34,28 +32,24 @@ public class Portfolio_item extends AppCompatActivity {
         Bundle data = i.getExtras();
         Portfolio v = (Portfolio) data.getSerializable("portfolioData");
 
-        getSupportActionBar().setTitle(v.getTitle());
 
         title = findViewById(R.id.detailTitle);
         desc = findViewById(R.id.detailDesc);
         image = findViewById(R.id.imageView);
 
-         title.setText(v.getTitle());
+        title.setText(v.getTitle());
         desc.setText(v.getDescription());
-
-
-
-        final String shareTitle = (v.getTitle());
-         final String  shareDesc = (v.getDescription());
-         final String shareLink = (v.getLink());
-
 
         final String imageItem = (v.getImage());
         byte[] imageAsBytes = Base64.decode(imageItem.getBytes(), Base64.DEFAULT);
         image.setImageBitmap(BitmapFactory.decodeByteArray(imageAsBytes, 0 , imageAsBytes.length));
 
 
+        final String shareTitle = (v.getTitle());
+        final String  shareDesc = (v.getDescription());
+        final String shareLink = (v.getLink());
 
+        // implicit intent
         Button share = (Button) findViewById(R.id.shareButton);
         share.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,9 +67,6 @@ public class Portfolio_item extends AppCompatActivity {
             }
         });
     }
-
-
-
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {

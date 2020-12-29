@@ -4,19 +4,10 @@ import java.io.Serializable;
 
 
 public class Portfolio implements Serializable {
-    private int number;
     private String title;
     private String description;
     private String image;
     private String link;
-
-    public int getNumber() {
-        return number;
-    }
-
-    public void setNumber(int number) {
-        this.number = number;
-    }
 
     public String getTitle() {
         return title;

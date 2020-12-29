@@ -34,38 +34,38 @@ public class PortfolioAdapter extends RecyclerView.Adapter<PortfolioAdapter.View
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         holder.title.setText(allPortfolioItems.get(position).getTitle());
 
-        String imageString = (allPortfolioItems.get(position).getImage());
-        byte[] imageAsBytes = Base64.decode(imageString.getBytes(), Base64.DEFAULT);
-       holder.portfolioImage.setImageBitmap(BitmapFactory.decodeByteArray(imageAsBytes, 0 , imageAsBytes.length));
+            String imageString = (allPortfolioItems.get(position).getImage());
+            byte[] imageAsBytes = Base64.decode(imageString.getBytes(), Base64.DEFAULT);
+            holder.portfolioImage.setImageBitmap(BitmapFactory.decodeByteArray(imageAsBytes, 0 , imageAsBytes.length));
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Bundle b = new Bundle();
-                b.putSerializable("portfolioData",allPortfolioItems.get(position));
-                Intent i = new Intent(context,Portfolio_item.class);
-                i.putExtras(b);
-                v.getContext().startActivity(i);
-            }
-        });
-    }
+        //expicit intent
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Bundle b = new Bundle();
+                    b.putSerializable("portfolioData",allPortfolioItems.get(position));
+                    Intent i = new Intent(context,Portfolio_item.class);
+                    i.putExtras(b);
+                    v.getContext().startActivity(i);
+                }
+            });
+        }
 
-    @Override
-    public int getItemCount() {
-        return allPortfolioItems.size();
-    }
+        @Override
+        public int getItemCount() {
+            return allPortfolioItems.size();
+        }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        ImageView portfolioImage;
-        TextView title;
-        TextView count;
+        public class ViewHolder extends RecyclerView.ViewHolder {
+            ImageView portfolioImage;
+            TextView title;
+            TextView count;
 
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
+            public ViewHolder(@NonNull View itemView) {
+                super(itemView);
 
-            portfolioImage = itemView.findViewById(R.id.projectImage);
-            title = itemView.findViewById(R.id.Title);
-            count = itemView.findViewById(R.id.count);
+                portfolioImage = itemView.findViewById(R.id.projectImage);
+                title = itemView.findViewById(R.id.Title);
         }
     }
 }
